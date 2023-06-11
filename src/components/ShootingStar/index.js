@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import styles from './styles.module.scss';
 
 const ShootingStar = ({
-    show,
+    key,
     delay,
     boxShadow,
     backgroundDot,
@@ -12,15 +12,26 @@ const ShootingStar = ({
 }) => {
     return (
         <AnimatePresence>
-            {show && <motion.div
+            <motion.div
                 className={styles.wrapper}
-                initial={{ opacity: 0 }}
+                key={key}
+                initial={{
+                    opacity: 0,
+                    transform: 'rotate(-50deg) translateX(200px)',
+                }}
                 animate={{
                     opacity: 1,
+                    transform: 'rotate(-50deg) translateX(0)',
                 }}
                 transition={{
-                    duration: 0.4,
-                    delay: delay
+                    opacity: {
+                        duration: 0.4,
+                        delay: delay
+                    },
+                    transform: {
+                        duration: 0.8,
+                        delay: delay + 0.4,
+                    },
                 }}
                 exit={{
                     opacity: 0,
@@ -33,12 +44,19 @@ const ShootingStar = ({
                     className={styles.dot}
                     animate={{
                         opacity: [0, 1],
+                        scale: [1.4, 1, 0.8, 1]
                     }}
                     transition={{
                         opacity: {
                             duration: 0.4,
-                            delay: delay + 0.6
+                            delay: delay + 1
                         },
+                        scale: {
+                            duration: 3,
+                            times: [0, 0.3, 0.6, 1],
+                            repeatDelay: 0.4,
+                            repeat: Infinity,
+                        }
                     }}
                     style={{
                         '--bg-dot': backgroundDot,
@@ -53,17 +71,16 @@ const ShootingStar = ({
                     }}
                     transition={{
                         scaleX: {
-                            duration: 0.8,
+                            duration: 2,
                             type: 'spring',
                             delay: delay + 0.3
                         }
                     }}
-                    // not work with framer motion
                     style={{
                         '--bg-line': backgroundLine
                     }}
                 />
-            </motion.div >}
+            </motion.div >
         </AnimatePresence>
     );
 };

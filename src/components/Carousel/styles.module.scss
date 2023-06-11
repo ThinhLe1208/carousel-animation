@@ -29,8 +29,16 @@
     align-items: center;
     z-index: 21;
 
+    .infoContainer,
+    .mainShoeContainer,
+    .navContainer {
+      height: 100%;
+      position: relative;
+    }
+
     .infoContainer {
       width: 30%;
+      height: 100%;
     }
 
     .mainShoeContainer {

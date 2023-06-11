@@ -1,6 +1,11 @@
 .wrapper {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   z-index: 20;
 
@@ -11,7 +16,7 @@
 
   .shadow {
     position: absolute;
-    top: 110%;
+    bottom: 10%;
     left: 50%;
     display: block;
     width: 60%;
@@ -25,18 +30,21 @@
   .shootingStar2,
   .shootingStar3 {
     position: absolute;
-    top: 70%;
-    right: -20%;
     width: 100%;
   }
 
   .shootingStar1 {
-    top: 20%;
+    top: 24%;
     right: -70%;
   }
 
   .shootingStar2 {
-    top: 60%;
-    right: -40%;
+    top: 62%;
+    right: -20%;
+  }
+
+  .shootingStar3 {
+    top: 40%;
+    right: -60%;
   }
 }

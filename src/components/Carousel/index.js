@@ -7,8 +7,24 @@ import MainShoe from '../MainShoe';
 import Info from '../Info';
 import Navigation from '../Navigation';
 
+const productList = [
+    {
+        id: 0,
+        imgSrc: require('../../assets/images/main_pink.png')
+    },
+    {
+        id: 1,
+        imgSrc: require('../../assets/images/main_green.png')
+    },
+    {
+        id: 2,
+        imgSrc: require('../../assets/images/main_blue.png')
+    },
+
+];
+
 const Carousel = () => {
-    const [show, setShow] = useState(true);
+    const [product, setProduct] = useState(productList[0]);
     const delayCarousel = 1;
 
     return (
@@ -33,12 +49,14 @@ const Carousel = () => {
                 </div>
 
                 <div className={styles.mainShoeContainer}>
-                    <MainShoe show={show} delayCarousel={delayCarousel} />
+                    <MainShoe product={product} delayCarousel={delayCarousel} />
                 </div>
 
                 <div className={styles.navContainer}>
                     <Navigation />
-                    <button onClick={() => setShow(!show)}>{show ? 'Hide' : 'Show'}</button>
+                    <button onClick={() => setProduct(productList[0])}>Product 1</button>
+                    <button onClick={() => setProduct(productList[1])}>Product 2</button>
+                    <button onClick={() => setProduct(productList[2])}>Product 3</button>
                 </div>
             </div>
         </div >

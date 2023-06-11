@@ -11,9 +11,9 @@ const Navigation = () => {
             transition={{ type: 'spring', duration: 2, delay: 3 }}
             className={styles.wrapper}
         >
-            <img src={require('../../assets/images/pink_nav.jpg')} alt="pink" />
-            <img src={require('../../assets/images/blue_nav.jpg')} alt="blue" />
-            <img src={require('../../assets/images/green_nav.jpg')} alt="green" />
+            <img src={require('../../assets/images/nav_pink.png')} alt="pink" />
+            <img src={require('../../assets/images/nav_green.png')} alt="blue" />
+            <img src={require('../../assets/images/nav_blue.png')} alt="green" />
         </motion.div>
     );
 };

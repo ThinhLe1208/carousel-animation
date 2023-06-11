@@ -22,16 +22,16 @@ const App = () => {
   return (
     <Suspense fallback={<Loading />}>
       <div>
-        {isLoading && <><Loading /></>}
+        {/* {isLoading && <><Loading /></>}
         {!isLoading && (
           <>
             <Header />
             <Carousel />
           </>
-        )}
+        )} */}
 
-        {/* <Header />
-        <Carousel /> */}
+        <Header />
+        <Carousel />
       </div>
     </Suspense>
   );
