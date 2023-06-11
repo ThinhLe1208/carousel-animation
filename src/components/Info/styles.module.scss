@@ -1,0 +1,43 @@
+.wrapper {
+  .title {
+    color: #fff;
+    font-size: 52px;
+    font-weight: 700;
+
+    .secondTitle {
+      color: rgb(199, 79, 138);
+    }
+  }
+
+  .subTitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .price {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .color {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .button {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(223, 21, 60);
+    border: none;
+    box-shadow: none;
+    outline: none;
+    padding: 8px 50px;
+  }
+}

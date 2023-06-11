@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
+import Carousel from './components/Carousel';
+import Header from './components/Header';
+import Loading from './components/Loading';
 
-function App() {
+// const Carousel = lazy(() => import('./components/Carousel'));
+// const Header = lazy(() => import('./components/Header'));
+
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <div>
+        {isLoading && <><Loading /></>}
+        {!isLoading && (
+          <>
+            <Header />
+            <Carousel />
+          </>
+        )}
+
+        {/* <Header />
+        <Carousel /> */}
+      </div>
+    </Suspense>
   );
-}
+};
 
 export default App;
