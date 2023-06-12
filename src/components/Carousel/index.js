@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import styles from './styles.module.scss';
@@ -10,8 +10,8 @@ import Navigation from '../Navigation';
 const productList = [
     {
         id: 0,
-        // image: require('../../assets/images/main_pink.png'),
-        image: require('../../assets/images/main_blue.png'),
+        image: require('../../assets/images/main_pink.png'),
+        navImage: require('../../assets/images/nav_pink.png'),
         subShoeList: [
             { id: 0, image: require('../../assets/images/sub_blue_1.png') },
             { id: 1, image: require('../../assets/images/sub_blue_2.png') },
@@ -21,6 +21,7 @@ const productList = [
     {
         id: 1,
         image: require('../../assets/images/main_green.png'),
+        navImage: require('../../assets/images/nav_green.png'),
         subShoeList: [
             { id: 0, image: require('../../assets/images/sub_blue_1.png') },
             { id: 1, image: require('../../assets/images/sub_blue_2.png') },
@@ -30,19 +31,49 @@ const productList = [
     {
         id: 2,
         image: require('../../assets/images/main_blue.png'),
+        navImage: require('../../assets/images/nav_blue.png'),
         subShoeList: [
             { id: 0, image: require('../../assets/images/sub_blue_1.png') },
             { id: 1, image: require('../../assets/images/sub_blue_2.png') },
             { id: 2, image: require('../../assets/images/sub_blue_3.png') },
         ]
     },
-
 ];
 
 const Carousel = () => {
     console.log('render Carousel');
-    const [product, setProduct] = useState(productList[0]);
+    const [updatedList, setUpdatedList] = useState([
+        productList[productList.length - 1],
+        ...productList,
+        productList[0]
+    ]);
+    const [currentProduct, setCurrentProduct] = useState(productList[1]);
     const delayCarousel = 0.8;
+
+    const handleSetProduct = useCallback((id) => {
+        let index = productList?.findIndex(item => item.id === id);
+        let updatedProduct = productList[index];
+        // improve logic later
+        let preIndex = index - 1;
+        if (preIndex < 0) {
+            preIndex = productList.length - 1;
+        }
+        let preCloneIndex = preIndex - 1;
+        if (preCloneIndex < 0) {
+            preCloneIndex = productList.length - 1;
+        }
+        let nextIndex = index + 1;
+        if (nextIndex > productList.length - 1) {
+            nextIndex = 0;
+        }
+        let nextCloneIndex = nextIndex + 1;
+        if (nextCloneIndex > productList.length - 1) {
+            nextCloneIndex = 0;
+        }
+        let updatedList = [productList[preCloneIndex], productList[preIndex], productList[index], productList[nextIndex], productList[nextCloneIndex]];
+        setCurrentProduct(updatedProduct);
+        setUpdatedList(updatedList);
+    }, []);
 
     return (
         <div className={styles.wrapper}>
@@ -66,14 +97,11 @@ const Carousel = () => {
                 </div>
 
                 <div className={styles.mainShoeContainer}>
-                    <MainShoe product={product} delayCarousel={delayCarousel} />
+                    <MainShoe product={currentProduct} delayCarousel={delayCarousel} />
                 </div>
 
                 <div className={styles.navContainer}>
-                    <Navigation />
-                    <button onClick={() => setProduct(productList[0])}>Product 1</button>
-                    <button onClick={() => setProduct(productList[1])}>Product 2</button>
-                    <button onClick={() => setProduct(productList[2])}>Product 3</button>
+                    <Navigation handleSetProduct={handleSetProduct} updatedList={updatedList} />
                 </div>
             </div>
         </div >

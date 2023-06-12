@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 
 import styles from './styles.module.scss';
 
-const Navigation = () => {
+const Navigation = memo(({
+    handleSetProduct,
+    updatedList
+}) => {
     console.log('render Navigation');
 
     return (
@@ -16,24 +19,50 @@ const Navigation = () => {
             <div className={styles.bgOusite}>
                 <div className={styles.border}>
                     <div className={styles.bgInside}>
-                        <div className={styles.imgContainer}>
+                        {/* clone start */}
+                        <motion.div
+                            className={styles.imgContainer}
+                            initial={{
+                                opacity: 0
+                            }}
+                            animate={{
+                                opacity: 0
+                            }}
+                        >
                             <motion.img
                                 className={styles.image}
-                                src={require('../../assets/images/nav_pink.png')}
+                                src={updatedList[0]?.navImage}
+                                alt="pink"
+                            />
+                        </motion.div>
+                        {/* main */}
+                        <div className={styles.imgContainer} onClick={() => handleSetProduct(updatedList[1]?.id)}>
+                            <motion.img
+                                className={styles.image}
+                                src={updatedList[1]?.navImage}
                                 alt="pink"
                             />
                         </div>
-                        <div className={styles.imgContainer}>
+                        <div className={styles.imgContainer} onClick={() => handleSetProduct(updatedList[2]?.id)}>
                             <motion.img
                                 className={styles.image}
-                                src={require('../../assets/images/nav_green.png')
-                                } alt="blue"
+                                src={updatedList[2]?.navImage}
+                                alt="blue"
                             />
                         </div>
-                        <div className={styles.imgContainer}>
+                        <div className={styles.imgContainer} onClick={() => handleSetProduct(updatedList[3]?.id)}>
                             <motion.img
                                 className={styles.image}
-                                src={require('../../assets/images/nav_blue.png')}
+                                src={updatedList[3]?.navImage}
+                                alt="green"
+                            />
+                        </div>
+                        {/* main */}
+                        {/* clone end */}
+                        <div className={styles.imgContainer} >
+                            <motion.img
+                                className={styles.image}
+                                src={updatedList[4]?.navImage}
                                 alt="green"
                             />
                         </div>
@@ -46,7 +75,7 @@ const Navigation = () => {
 
         </motion.div>
     );
-};
+});
 
 export default Navigation;
 

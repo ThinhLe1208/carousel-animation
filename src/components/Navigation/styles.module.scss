@@ -66,15 +66,22 @@
       background: linear-gradient(90deg, rgba(115, 104, 110, 1) 0%, rgba(36, 37, 43, 0) 100%);
 
       border-radius: 10px;
+      cursor: pointer;
 
       &:nth-child(1) {
-        transform: translate(-50%, -50%) rotate(30deg) translateX(-200px);
+        transform: translate(-50%, -50%) rotate(60deg) translateX(-200px);
       }
       &:nth-child(2) {
-        transform: translate(-50%, -50%) rotate(0deg) translateX(-200px);
+        transform: translate(-50%, -50%) rotate(30deg) translateX(-200px);
       }
       &:nth-child(3) {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(-200px);
+      }
+      &:nth-child(4) {
         transform: translate(-50%, -50%) rotate(-30deg) translateX(-200px);
+      }
+      &:nth-child(5) {
+        transform: translate(-50%, -50%) rotate(-60deg) translateX(-200px);
       }
 
       .image {
@@ -84,15 +91,4 @@
       }
     }
   }
-
-  // .roundedBar {
-  //   position: absolute;
-  //   top: 50%;
-  //   right: 0;
-
-  //   width: 30%;
-  //   padding-top: 30%;
-  //   border: 10px solid #fff;
-  //   border-radius: 100%;
-  // }
 }
