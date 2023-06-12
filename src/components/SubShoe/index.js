@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import styles from './styles.module.scss';
 
 const SubShoe = ({ subShoeList, delayCarousel }) => {
+    console.log('render SubShoe');
     const staggerChildren = 0.2;
     const delaySub = 1.4;
     const exitDur = 0.3;
@@ -41,82 +42,88 @@ const SubShoe = ({ subShoeList, delayCarousel }) => {
     return (
         <motion.div className={styles.wrapper}>
             <motion.div className={styles.images}>
-                <motion.img
-                    className={styles.image}
-                    src={subShoeList[0]?.image}
-                    alt='img'
-                    initial={{
-                        opacity: 0,
-                        x: '100%'
-                    }}
-                    animate={{
-                        opacity: 1,
-                        x: '50%'
-                    }}
-                    transition={{
-                        x: { type: 'spring' },
-                        delay: delayCarousel + staggerChildren * 0 + delaySub,
-                        duration: 0.4
-                    }}
-                    exit={{
-                        opacity: 0,
-                        x: '100%',
-                        transition: {
-                            delay: staggerChildren * 0,
-                            duration: exitDur
-                        }
-                    }}
-                ></motion.img>
-                <motion.img
-                    className={styles.image}
-                    src={subShoeList[1]?.image}
-                    alt='img'
-                    initial={{
-                        opacity: 0,
-                        x: '0%'
-                    }}
-                    animate={{
-                        opacity: 1,
-                        x: '-50%'
-                    }}
-                    transition={{
-                        delay: delayCarousel + staggerChildren * 1 + delaySub,
-                        duration: 0.4
-                    }}
-                    exit={{
-                        opacity: 0,
-                        x: '0%',
-                        transition: {
-                            delay: staggerChildren * 1,
-                            duration: exitDur
-                        }
-                    }}
-                ></motion.img>
-                <motion.img
-                    className={styles.image}
-                    src={subShoeList[2]?.image}
-                    alt='img'
-                    initial={{
-                        opacity: 0,
-                        x: '-30%'
-                    }}
-                    animate={{
-                        opacity: 1,
-                        x: '-80%'
-                    }}
-                    transition={{
-                        delay: delayCarousel + staggerChildren * 2 + delaySub,
-                        duration: 0.4
-                    }}
-                    exit={{
-                        opacity: 0,
-                        x: '-30%',
-                        transition: {
-                            delay: staggerChildren * 2,
-                            duration: exitDur
-                        }
-                    }}
-                ></motion.img>
+                <div className={styles.imgContainer}>
+                    <motion.img
+                        className={styles.image}
+                        src={subShoeList[0]?.image}
+                        alt='img'
+                        initial={{
+                            opacity: 0,
+                            x: '100%'
+                        }}
+                        animate={{
+                            opacity: 1,
+                            x: '50%'
+                        }}
+                        transition={{
+                            x: { type: 'spring' },
+                            delay: delayCarousel + staggerChildren * 0 + delaySub,
+                            duration: 0.4
+                        }}
+                        exit={{
+                            opacity: 0,
+                            x: '100%',
+                            transition: {
+                                delay: staggerChildren * 0,
+                                duration: exitDur
+                            }
+                        }}
+                    ></motion.img>
+                </div>
+                <div className={styles.imgContainer}>
+                    <motion.img
+                        className={styles.image}
+                        src={subShoeList[0]?.image}
+                        alt='img'
+                        initial={{
+                            opacity: 0,
+                            x: '40%'
+                        }}
+                        animate={{
+                            opacity: 1,
+                            x: '-10%'
+                        }}
+                        transition={{
+                            delay: delayCarousel + staggerChildren * 1 + delaySub,
+                            duration: 0.4
+                        }}
+                        exit={{
+                            opacity: 0,
+                            x: '40%',
+                            transition: {
+                                delay: staggerChildren * 1,
+                                duration: exitDur
+                            }
+                        }}
+                    ></motion.img>
+                </div>
+                <div className={styles.imgContainer}>
+                    <motion.img
+                        className={styles.image}
+                        src={subShoeList[0]?.image}
+                        alt='img'
+                        initial={{
+                            opacity: 0,
+                            x: '-20%'
+                        }}
+                        animate={{
+                            opacity: 1,
+                            x: '-70%'
+                        }}
+                        transition={{
+                            delay: delayCarousel + staggerChildren * 2 + delaySub,
+                            duration: 0.4
+                        }}
+                        exit={{
+                            opacity: 0,
+                            x: '-20%',
+                            transition: {
+                                delay: staggerChildren * 2,
+                                duration: exitDur
+                            }
+                        }}
+                    ></motion.img>
+                </div>
             </motion.div>
 
             <motion.div

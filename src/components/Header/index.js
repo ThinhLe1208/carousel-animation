@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 const Header = () => {
+    console.log('render Header');
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
@@ -26,8 +27,8 @@ const Header = () => {
 
                 <nav>
                     <ul className={styles.linkList}>
-                        <li>Home</li>
-                        <li>Store</li>
+                        <li><a href='./index.html'>Home</a></li>
+                        <li><a href='./template.html'>Store</a></li>
                         <li>Browse</li>
                         <li>Collection</li>
                     </ul>

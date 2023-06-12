@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import styles from './styles.module.scss';
 
 const NikePath = ({ delayCarousel }) => {
+    console.log('render NikePath');
 
     return (
         <motion.div

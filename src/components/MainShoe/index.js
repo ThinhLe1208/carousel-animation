@@ -3,19 +3,19 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import styles from './styles.module.scss';
 import ShootingStar from '../ShootingStar';
-import { globalConstants } from '../../constants/globalConstants';
 import SubShoe from '../SubShoe';
 
 const variants = {
     visible: { opacity: 1 },
     hidden: {
         rotate: [0, -10, 20],
+        y: -40,
         x: '100vw',
         transition: {
             x: {
                 duration: 2,
                 type: 'spring',
-                delay: 0.6,
+                delay: 0.7,
             },
             rotate: {
                 duration: 1.4,
@@ -27,6 +27,7 @@ const variants = {
 };
 
 const MainShoe = ({ product, delayCarousel }) => {
+    console.log('render MainShoe');
     return (
         <AnimatePresence>
             <motion.div
@@ -93,16 +94,22 @@ const MainShoe = ({ product, delayCarousel }) => {
                             repeat: Infinity,
                         }
                     }}
+                    exit={{
+                        x: '100vw',
+                        transition: {
+                            duration: 2,
+                            delay: 0.7,
+                            type: 'spring',
+                        }
+                    }}
                 ></motion.div>
 
                 <motion.div
                     className={styles.shootingStar1}
-                // exit='hidden'
-                // variants={variants}
                 >
                     <ShootingStar
                         key={product?.id}
-                        delay={3.2}
+                        delay={3}
                         boxShadow='var(--shootingStarShadow1)'
                         backgroundDot='var(--shootingStarBgDot1)'
                         backgroundLine='var(--shootingStarBgLine1)'
@@ -110,12 +117,10 @@ const MainShoe = ({ product, delayCarousel }) => {
                 </motion.div>
                 <motion.div
                     className={styles.shootingStar2}
-                // exit='hidden'
-                // variants={variants}
                 >
                     <ShootingStar
                         key={product?.id}
-                        delay={3}
+                        delay={2.8}
                         boxShadow='var(--shootingStarShadow2)'
                         backgroundDot='var(--shootingStarBgDot2)'
                         backgroundLine='var(--shootingStarBgLine2)'
@@ -123,12 +128,10 @@ const MainShoe = ({ product, delayCarousel }) => {
                 </motion.div>
                 <motion.div
                     className={styles.shootingStar3}
-                // exit='hidden'
-                // variants={variants}
                 >
                     <ShootingStar
                         key={product?.id}
-                        delay={2.6}
+                        delay={2.4}
                         boxShadow='var(--shootingStarShadow1)'
                         backgroundDot='var(--shootingStarBgDot1)'
                         backgroundLine='var(--shootingStarBgLine1)'
