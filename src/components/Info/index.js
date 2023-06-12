@@ -6,8 +6,8 @@ import styles from './styles.module.scss';
 const Info = () => {
     return (
         <motion.div
-            initial={{ opacity: 0, translateY: -20 }}
-            animate={{ opacity: 1, translateY: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ type: 'spring', duration: 2, delay: 3 }}
             className={styles.wrapper}
 

@@ -1,0 +1,64 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  //   .image,
+  .backgrounds {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 14%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+
+    transform: skewX(-40deg);
+    overflow: hidden;
+
+    z-index: 30;
+
+    .background {
+      width: 100%;
+      height: 30%;
+
+      border-radius: 4px;
+      background-color: #4158d0;
+      background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+
+      transform-origin: right;
+    }
+  }
+
+  .images {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    row-gap: 20px;
+
+    .image {
+      position: relative;
+      object-fit: contain;
+      height: 26%;
+      z-index: 31;
+
+      &:nth-child(1) {
+        transform: translateX(50%);
+      }
+
+      &:nth-child(2) {
+        transform: translateX(-50%);
+      }
+
+      &:nth-child(3) {
+        transform: translateX(-80%);
+      }
+    }
+  }
+}

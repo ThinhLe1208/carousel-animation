@@ -1,7 +1,7 @@
 .wrapper {
   position: absolute;
   inset: 0;
-  width: 60%;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -10,6 +10,8 @@
   z-index: 20;
 
   .mainImg {
+    width: 60%;
+    margin: 0 auto;
     filter: drop-shadow(-38px -12px 40px red);
     transform-origin: bottom left;
   }
@@ -19,7 +21,7 @@
     bottom: 10%;
     left: 50%;
     display: block;
-    width: 60%;
+    width: 40%;
     height: 20px;
     background: #000;
     box-shadow: 2px 2px 187px 70px rgba(0, 0, 0, 1);
@@ -30,21 +32,29 @@
   .shootingStar2,
   .shootingStar3 {
     position: absolute;
-    width: 100%;
+    width: 60%;
   }
 
   .shootingStar1 {
-    top: 24%;
-    right: -70%;
+    top: 22%;
+    right: -22%;
   }
 
   .shootingStar2 {
-    top: 62%;
-    right: -20%;
+    top: 60%;
+    right: 4%;
   }
 
   .shootingStar3 {
-    top: 40%;
-    right: -60%;
+    top: 50%;
+    right: -8%;
+  }
+
+  .subShoe {
+    position: absolute;
+    right: 10%;
+    bottom: 12%;
+    width: 100%;
+    height: 40%;
   }
 }

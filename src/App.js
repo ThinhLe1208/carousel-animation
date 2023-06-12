@@ -7,7 +7,7 @@ import Loading from './components/Loading';
 // const Header = lazy(() => import('./components/Header'));
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const timerId = setTimeout(() => {
@@ -20,20 +20,15 @@ const App = () => {
   }, []);
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div>
-        {/* {isLoading && <><Loading /></>}
-        {!isLoading && (
-          <>
-            <Header />
-            <Carousel />
-          </>
-        )} */}
-
-        <Header />
-        <Carousel />
-      </div>
-    </Suspense>
+    <div>
+      {isLoading && <><Loading /></>}
+      {!isLoading && (
+        <>
+          <Header />
+          <Carousel />
+        </>
+      )}
+    </div>
   );
 };
 
