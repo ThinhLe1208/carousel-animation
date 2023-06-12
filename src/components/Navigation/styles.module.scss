@@ -17,16 +17,19 @@
   justify-content: center;
   align-items: center;
 
-  .bgOusite {
+  .bgOusite,
+  .images {
     position: absolute;
     top: 50%;
     right: 0;
 
     width: 70%;
-
-    background-color: var(--bgc);
-
     transform: translate(60%, -50%);
+  }
+
+  .bgOusite {
+    background-color: var(--bgc);
+    z-index: 41;
 
     &,
     .border,
@@ -50,6 +53,11 @@
       width: 88%;
       background-color: var(--bgc);
     }
+  }
+
+  .images {
+    z-index: 40;
+    aspect-ratio: 1 / 1;
 
     .imgContainer {
       position: absolute;
@@ -58,30 +66,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      z-index: 40;
 
       width: 26%;
       aspect-ratio: 1.4 / 1;
 
-      background: rgb(115, 104, 110);
       background: linear-gradient(90deg, rgba(115, 104, 110, 1) 0%, rgba(36, 37, 43, 0) 100%);
 
       border-radius: 10px;
       cursor: pointer;
 
-      &:nth-child(1) {
-        transform: translate(-50%, -50%) rotate(60deg) translateX(-200px);
-      }
       &:nth-child(2) {
-        transform: translate(-50%, -50%) rotate(30deg) translateX(-200px);
-      }
-      &:nth-child(3) {
-        transform: translate(-50%, -50%) rotate(0deg) translateX(-200px);
-      }
-      &:nth-child(4) {
-        transform: translate(-50%, -50%) rotate(-30deg) translateX(-200px);
-      }
-      &:nth-child(5) {
-        transform: translate(-50%, -50%) rotate(-60deg) translateX(-200px);
+        background: linear-gradient(90deg, rgba(195, 36, 69, 1) 0%, rgba(36, 37, 43, 0) 100%);
       }
 
       .image {

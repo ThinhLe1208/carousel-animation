@@ -109,7 +109,7 @@ const MainShoe = ({ product, delayCarousel }) => {
                 >
                     <ShootingStar
                         key={product?.id}
-                        delay={3.2}
+                        delay={3}
                         boxShadow='var(--shootingStarShadow1)'
                         backgroundDot='var(--shootingStarBgDot1)'
                         backgroundLine='var(--shootingStarBgLine1)'
@@ -120,7 +120,7 @@ const MainShoe = ({ product, delayCarousel }) => {
                 >
                     <ShootingStar
                         key={product?.id}
-                        delay={3}
+                        delay={2.8}
                         boxShadow='var(--shootingStarShadow2)'
                         backgroundDot='var(--shootingStarBgDot2)'
                         backgroundLine='var(--shootingStarBgLine2)'
@@ -131,7 +131,7 @@ const MainShoe = ({ product, delayCarousel }) => {
                 >
                     <ShootingStar
                         key={product?.id}
-                        delay={2.6}
+                        delay={2.4}
                         boxShadow='var(--shootingStarShadow1)'
                         backgroundDot='var(--shootingStarBgDot1)'
                         backgroundLine='var(--shootingStarBgLine1)'

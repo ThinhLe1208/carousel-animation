@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import styles from './styles.module.scss';
 import NikePath from '../NikePath';
@@ -101,7 +101,9 @@ const Carousel = () => {
                 </div>
 
                 <div className={styles.navContainer}>
-                    <Navigation handleSetProduct={handleSetProduct} updatedList={updatedList} />
+                    <AnimatePresence>
+                        <Navigation key={currentProduct?.id} handleSetProduct={handleSetProduct} updatedList={updatedList} />
+                    </AnimatePresence>
                 </div>
             </div>
         </div >
