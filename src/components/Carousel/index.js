@@ -40,6 +40,7 @@ const productList = [
 ];
 
 const Carousel = () => {
+    console.log('render Carousel');
     const [product, setProduct] = useState(productList[0]);
     const delayCarousel = 0.8;
 

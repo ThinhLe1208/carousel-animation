@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import styles from './styles.module.scss';
 
 const Info = () => {
+    console.log('render Info');
     return (
         <motion.div
             initial={{ opacity: 0, y: -20 }}
