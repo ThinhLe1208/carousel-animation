@@ -52,6 +52,7 @@ const MainShoe = ({ product, delayCarousel }) => {
                         rotate: [0, -10, 0],
                         x: [0, 30, 0],
                         y: [0, -30, 0],
+                        filter: [`drop-shadow(-38px -12px 40px ${product?.color})`, `drop-shadow(24px 32px 100px ${product?.color})`, `drop-shadow(-52px 0px 80px ${product?.color})`, `drop-shadow(-38px -12px 40px ${product?.color})`]
                     }}
                     transition={{
                         rotate: {
@@ -71,6 +72,13 @@ const MainShoe = ({ product, delayCarousel }) => {
                             duration: 3,
                             delay: delayCarousel + 0.8,
                             times: [0, 0.5, 1],
+                            repeatDelay: 0,
+                            repeat: Infinity,
+                        },
+                        filter: {
+                            duration: 5,
+                            delay: delayCarousel + 0.8,
+                            times: [0, 0.5, 0.75, 1],
                             repeatDelay: 0,
                             repeat: Infinity,
                         },

@@ -10,16 +10,7 @@ import Navigation from '../Navigation';
 const productList = [
     {
         id: 0,
-        image: require('../../assets/images/main_pink.png'),
-        navImage: require('../../assets/images/nav_pink.png'),
-        subShoeList: [
-            { id: 0, image: require('../../assets/images/sub_blue_1.png') },
-            { id: 1, image: require('../../assets/images/sub_blue_2.png') },
-            { id: 2, image: require('../../assets/images/sub_blue_3.png') },
-        ]
-    },
-    {
-        id: 1,
+        color: '#56ab2f',
         image: require('../../assets/images/main_green.png'),
         navImage: require('../../assets/images/nav_green.png'),
         subShoeList: [
@@ -29,7 +20,19 @@ const productList = [
         ]
     },
     {
+        id: 1,
+        color: '#CB356B',
+        image: require('../../assets/images/main_pink.png'),
+        navImage: require('../../assets/images/nav_pink.png'),
+        subShoeList: [
+            { id: 0, image: require('../../assets/images/sub_blue_1.png') },
+            { id: 1, image: require('../../assets/images/sub_blue_2.png') },
+            { id: 2, image: require('../../assets/images/sub_blue_3.png') },
+        ]
+    },
+    {
         id: 2,
+        color: '#021B79',
         image: require('../../assets/images/main_blue.png'),
         navImage: require('../../assets/images/nav_blue.png'),
         subShoeList: [
@@ -93,7 +96,7 @@ const Carousel = () => {
 
             <div className={styles.slider}>
                 <div className={styles.infoContainer}>
-                    <Info delayCarousel={delayCarousel} />
+                    <Info product={currentProduct} delayCarousel={delayCarousel} />
                 </div>
 
                 <div className={styles.mainShoeContainer}>

@@ -27,8 +27,8 @@ const Header = () => {
 
                 <nav>
                     <ul className={styles.linkList}>
-                        <li><a href='./index.html'>Home</a></li>
-                        <li><a href='./template.html'>Store</a></li>
+                        <li>Home</li>
+                        <li>Store</li>
                         <li>Browse</li>
                         <li>Collection</li>
                     </ul>

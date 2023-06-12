@@ -10,9 +10,9 @@
   z-index: 20;
 
   .mainImg {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
-    filter: drop-shadow(-38px -12px 40px red);
+    filter: drop-shadow(-38px -12px 40px green);
     transform-origin: bottom left;
   }
 
@@ -23,8 +23,8 @@
     display: block;
     width: 40%;
     height: 20px;
-    background: #000;
-    box-shadow: 2px 2px 187px 70px rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 2px 2px 187px 70px rgba(0, 0, 0, 0.8);
     border-radius: 100%;
   }
 
