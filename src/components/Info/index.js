@@ -20,10 +20,10 @@ const Info = ({ product, delayCarousel }) => {
                 <motion.h1
                     className={styles.title}
                     initial={{
-                        transform: 'translateX(-1000%)'
+                        x: -1000
                     }}
                     animate={{
-                        transform: 'translateX(0%)'
+                        x: 0
                     }}
                     transition={{
                         type: 'spring',
@@ -31,7 +31,7 @@ const Info = ({ product, delayCarousel }) => {
                         duration: 1
                     }}
                     exit={{
-                        transform: 'translateX(-1000%)',
+                        x: -1000,
                         transition: {
                             type: 'spring',
                             delay: staggerChildren * 0,
@@ -39,15 +39,15 @@ const Info = ({ product, delayCarousel }) => {
                         }
                     }}
                 >
-                    Nike ZoomX <span className={styles.secondTitle}>Vaporfly</span>
+                    {product?.brand} <span className={styles.secondTitle}>{product?.name}</span>
                 </motion.h1>
                 <motion.h2
                     className={styles.subTitle}
                     initial={{
-                        transform: 'translateX(-1000%)'
+                        x: -1000
                     }}
                     animate={{
-                        transform: 'translateX(0%)'
+                        x: 0
                     }}
                     transition={{
                         type: 'spring',
@@ -55,7 +55,7 @@ const Info = ({ product, delayCarousel }) => {
                         duration: 1
                     }}
                     exit={{
-                        transform: 'translateX(-1000%)',
+                        x: -1000,
                         transition: {
                             type: 'spring',
                             delay: staggerChildren * 1,
@@ -63,16 +63,16 @@ const Info = ({ product, delayCarousel }) => {
                         }
                     }}
                 >
-                    NEXT%
+                    {product?.subName}
                 </motion.h2>
 
                 <motion.p
                     className={styles.price}
                     initial={{
-                        transform: 'translateX(-1000%)'
+                        x: -1000
                     }}
                     animate={{
-                        transform: 'translateX(0%)'
+                        x: 0
                     }}
                     transition={{
                         type: 'spring',
@@ -80,7 +80,7 @@ const Info = ({ product, delayCarousel }) => {
                         duration: 1
                     }}
                     exit={{
-                        transform: 'translateX(-1000%)',
+                        x: -1000,
                         transition: {
                             type: 'spring',
                             delay: staggerChildren * 2,
@@ -88,16 +88,16 @@ const Info = ({ product, delayCarousel }) => {
                         }
                     }}
                 >
-                    $270
+                    ${product?.price}
                 </motion.p>
 
                 <motion.p
-                    className={styles.color}
+                    className={styles.colorLabel}
                     initial={{
-                        transform: 'translateX(-1000%)'
+                        x: -1000
                     }}
                     animate={{
-                        transform: 'translateX(0%)'
+                        x: 0
                     }}
                     transition={{
                         type: 'spring',
@@ -105,7 +105,7 @@ const Info = ({ product, delayCarousel }) => {
                         duration: 1
                     }}
                     exit={{
-                        transform: 'translateX(-1000%)',
+                        x: -1000,
                         transition: {
                             type: 'spring',
                             delay: staggerChildren * 3,
@@ -115,28 +115,169 @@ const Info = ({ product, delayCarousel }) => {
                 >
                     Color
                 </motion.p>
+                <motion.div
+                    className={styles.colorList}
+                >
+                    <motion.div
+                        className={styles.colorItem}
+                        initial={{
+                            x: -1000
+                        }}
+                        animate={{
+                            x: 0
+                        }}
+                        transition={{
+                            type: 'spring',
+                            delay: 1.6 + staggerChildren * 4,
+                            duration: 1
+                        }}
+                        exit={{
+                            x: -1000,
+                            transition: {
+                                type: 'spring',
+                                delay: staggerChildren * 4,
+                                duration: 1
+                            }
+                        }}
+                    >
+                    </motion.div>
+                    <motion.div
+                        className={styles.colorItem}
+                        initial={{
+                            x: -1000
+                        }}
+                        animate={{
+                            x: 0
+                        }}
+                        transition={{
+                            type: 'spring',
+                            delay: 1.6 + staggerChildren * 5,
+                            duration: 1
+                        }}
+                        exit={{
+                            x: -1000,
+                            transition: {
+                                type: 'spring',
+                                delay: staggerChildren * 5,
+                                duration: 1
+                            }
+                        }}
+                    >
+                    </motion.div>
+                    <motion.div
+                        className={styles.colorItem}
+                        initial={{
+                            x: -1000
+                        }}
+                        animate={{
+                            x: 0
+                        }}
+                        transition={{
+                            type: 'spring',
+                            delay: 1.6 + staggerChildren * 6,
+                            duration: 1
+                        }}
+                        exit={{
+                            x: -1000,
+                            transition: {
+                                type: 'spring',
+                                delay: staggerChildren * 6,
+                                duration: 1
+                            }
+                        }}
+                    >
+                    </motion.div>
+                    <motion.div
+                        className={styles.colorItem}
+                        initial={{
+                            x: -1000
+                        }}
+                        animate={{
+                            x: 0
+                        }}
+                        transition={{
+                            type: 'spring',
+                            delay: 1.6 + staggerChildren * 7,
+                            duration: 1
+                        }}
+                        exit={{
+                            x: -1000,
+                            transition: {
+                                type: 'spring',
+                                delay: staggerChildren * 7,
+                                duration: 1
+                            }
+                        }}
+                    >
+                    </motion.div>
+                </motion.div>
+
+                <motion.div
+                    className={styles.sizeContainer}
+                    initial={{
+                        x: -1000
+                    }}
+                    animate={{
+                        x: 0
+                    }}
+                    transition={{
+                        type: 'spring',
+                        delay: 1.6 + staggerChildren * 8,
+                        duration: 1
+                    }}
+                    exit={{
+                        x: -1000,
+                        transition: {
+                            type: 'spring',
+                            delay: staggerChildren * 8,
+                            duration: 1
+                        }
+                    }}
+                >
+                    <div className={styles.sizeRegions}>
+                        <p className={styles.sizeLabel}>Size</p>
+                        <p className={styles.sizeItem}>EU</p>
+                        <p className={styles.sizeItem}>UK</p>
+                        <p className={styles.sizeItem + ' ' + styles.active}>US</p>
+                    </div>
+                    <div className={styles.sizeNumbers}>
+                        <div className={styles.sizeItem + ' ' + styles.active}>7</div>
+                        <div className={styles.sizeItem}>7.5</div>
+                        <div className={styles.sizeItem}>8</div>
+                        <div className={styles.sizeItem}>8.5</div>
+                        <div className={styles.sizeItem}>8</div>
+                    </div>
+                </motion.div>
 
                 <motion.button
                     className={styles.button}
                     initial={{
-                        transform: 'translateX(-1000%)'
+                        x: -1000
                     }}
                     animate={{
-                        transform: 'translateX(0%)'
+                        x: 0
                     }}
                     transition={{
-                        type: 'spring',
-                        delay: 1.6 + staggerChildren * 4,
-                        duration: 1
+                        x: {
+                            type: 'spring',
+                            delay: 1.6 + staggerChildren * 9,
+                            duration: 1
+                        },
+                        scale: {
+                            type: "spring",
+                            stiffness: 400,
+                            damping: 10
+                        }
                     }}
                     exit={{
-                        transform: 'translateX(-1000%)',
+                        x: -1000,
                         transition: {
                             type: 'spring',
-                            delay: staggerChildren * 4,
+                            delay: staggerChildren * 9,
                             duration: 1
                         }
                     }}
+                    whileHover={{ scale: 1.1 }}
                 >
                     BUY
                 </motion.button>

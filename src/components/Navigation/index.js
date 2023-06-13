@@ -85,7 +85,7 @@ const Navigation = memo(({
                         }
                     }}
                     whileHover={{
-                        transform: 'translate(-50%, -50%) rotate(30deg) translateX(-300%) scale(1.4)',
+                        transform: 'translate(-50%, -50%) rotate(30deg) translateX(-300%) scale(1.2)',
                         transition: {
                             type: 'spring',
                             duration: 0.4
@@ -96,7 +96,7 @@ const Navigation = memo(({
                         className={styles.image}
                         src={updatedList[1]?.navImage}
                         alt="pic"
-                        whileHover={{ scale: 1.2 }}
+                        whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     />
                 </motion.div>
@@ -122,7 +122,7 @@ const Navigation = memo(({
                         }
                     }}
                     whileHover={{
-                        transform: 'translate(-50%, -50%) rotate(0deg) translateX(-300%) scale(1.4)',
+                        transform: 'translate(-50%, -50%) rotate(0deg) translateX(-300%) scale(1.2)',
                         transition: {
                             type: 'spring',
                             duration: 0.4
@@ -133,7 +133,7 @@ const Navigation = memo(({
                         className={styles.image}
                         src={updatedList[2]?.navImage}
                         alt="pic"
-                        whileHover={{ scale: 1.2 }}
+                        whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     />
                 </motion.div>
@@ -159,7 +159,7 @@ const Navigation = memo(({
                         }
                     }}
                     whileHover={{
-                        transform: 'translate(-50%, -50%) rotate(-30deg) translateX(-300%) scale(1.4)',
+                        transform: 'translate(-50%, -50%) rotate(-30deg) translateX(-300%) scale(1.2)',
                         transition: {
                             type: 'spring',
                             duration: 0.4
@@ -170,7 +170,7 @@ const Navigation = memo(({
                         className={styles.image}
                         src={updatedList[3]?.navImage}
                         alt="pic"
-                        whileHover={{ scale: 1.2 }}
+                        whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     />
                 </motion.div>

@@ -10,7 +10,11 @@ import Navigation from '../Navigation';
 const productList = [
     {
         id: 0,
+        brand: 'Nike',
+        name: 'Zoom',
+        subName: 'Fly 3',
         color: '#56ab2f',
+        price: 230,
         image: require('../../assets/images/main_green.webp'),
         navImage: require('../../assets/images/nav_green.webp'),
         subShoeList: [
@@ -21,7 +25,11 @@ const productList = [
     },
     {
         id: 1,
+        brand: 'Nike',
+        name: 'ZoomX',
+        subName: 'Vaporfly',
         color: '#CB356B',
+        price: 370,
         image: require('../../assets/images/main_pink.webp'),
         navImage: require('../../assets/images/nav_pink.webp'),
         subShoeList: [
@@ -32,7 +40,11 @@ const productList = [
     },
     {
         id: 2,
+        brand: 'Nike',
+        name: 'Air Zoom',
+        subName: 'SuperRep',
         color: '#021B79',
+        price: 410,
         image: require('../../assets/images/main_blue.webp'),
         navImage: require('../../assets/images/nav_blue.webp'),
         subShoeList: [
@@ -89,6 +101,7 @@ const Carousel = () => {
             >
                 NIKE
             </motion.p>
+            <div className={styles.overlayBackground}></div>
 
             <NikePath delayCarousel={delayCarousel} />
 

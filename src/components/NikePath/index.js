@@ -8,21 +8,34 @@ const NikePath = ({ delayCarousel }) => {
 
     return (
         <motion.div
+            className={styles.wrapper}
             initial={{ width: 0 }}
             animate={{ width: '100%' }}
             transition={{ type: 'spring', duration: 2, delay: delayCarousel }}
-            className={styles.wrapper}>
+        >
 
             {/* <motion.img
+                className={styles.video}
+                src={require('../../assets/images/ink.webp')}
+                alt="blue_ink_gif"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: delayCarousel }}
-                className={styles.video}
-                src={require('../../assets/images/blue_ink.gif')}
-                alt="blue_ink_gif"
+                transition={{
+                    delay: delayCarousel + 0.2,
+                    duration: 0
+                }}
             /> */}
 
-            <div className={styles.overlay}></div>
+            <motion.div
+                className={styles.overlay}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.4 }}
+                transition={{
+                    delay: delayCarousel + 0.2,
+                    duration: 0
+                }}
+            ></motion.div>
+
             <svg xmlns="http://www.w3.org/2000/svg" width={1366} height={768} viewBox="0 0 1366 768">
                 <defs>
                     <clipPath id='nike'  >
