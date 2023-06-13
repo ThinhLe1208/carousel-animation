@@ -8,12 +8,12 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding-top: 40%;
+  padding-top: 30%;
   padding-left: 30%;
 
   .title {
     color: #fff;
-    font-size: 46px;
+    font-size: 50px;
     font-weight: 900;
     margin-bottom: var(--sub-spacing);
 
@@ -24,21 +24,31 @@
 
   .subTitle {
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: var(--spacing);
   }
 
   .price {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
     color: #fff;
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 700;
     margin-bottom: var(--spacing);
+
+    .currency {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 20px;
+      transform: translateY(-2px);
+      margin-right: 2px;
+    }
   }
 
   .colorLabel {
-    color: #fff;
-    font-size: 16px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 20px;
     font-weight: 700;
     margin-bottom: 40px;
     margin-bottom: var(--sub-spacing);
@@ -79,32 +89,16 @@
 
   .sizeContainer {
     margin-bottom: var(--spacing);
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     margin-right: 20px;
 
-    .sizeRegions {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+    .sizeLabel {
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 20px;
+      font-weight: 700;
+      margin-right: 20px;
       margin-bottom: var(--sub-spacing);
-
-      .sizeLabel {
-        color: #fff;
-        font-size: 16px;
-        font-weight: 700;
-        margin-right: 20px;
-      }
-
-      .sizeItem {
-        color: rgba(255, 255, 255, 0.4);
-        margin-right: 8px;
-        cursor: pointer;
-
-        &.active {
-          color: #df153c;
-        }
-      }
     }
 
     .sizeNumbers {

@@ -7,9 +7,6 @@ const Info = ({ product, delayCarousel }) => {
     console.log('render Info');
 
     const staggerChildren = 0.1;
-    const delaySub = 1.4;
-    const exitDur = 0.3;
-
 
     return (
         <AnimatePresence>
@@ -39,7 +36,16 @@ const Info = ({ product, delayCarousel }) => {
                         }
                     }}
                 >
-                    {product?.brand} <span className={styles.secondTitle}>{product?.name}</span>
+                    {product?.brand}
+                    {' '}
+                    <span
+                        className={styles.secondTitle}
+                        style={{
+                            color: product?.color
+                        }}
+                    >
+                        {product?.name}
+                    </span>
                 </motion.h1>
                 <motion.h2
                     className={styles.subTitle}
@@ -88,7 +94,8 @@ const Info = ({ product, delayCarousel }) => {
                         }
                     }}
                 >
-                    ${product?.price}
+                    <span className={styles.currency}>$</span>
+                    <span>{product?.price}</span>
                 </motion.p>
 
                 <motion.p
@@ -234,12 +241,7 @@ const Info = ({ product, delayCarousel }) => {
                         }
                     }}
                 >
-                    <div className={styles.sizeRegions}>
-                        <p className={styles.sizeLabel}>Size</p>
-                        <p className={styles.sizeItem}>EU</p>
-                        <p className={styles.sizeItem}>UK</p>
-                        <p className={styles.sizeItem + ' ' + styles.active}>US</p>
-                    </div>
+                    <p className={styles.sizeLabel}>Size</p>
                     <div className={styles.sizeNumbers}>
                         <div className={styles.sizeItem + ' ' + styles.active}>7</div>
                         <div className={styles.sizeItem}>7.5</div>

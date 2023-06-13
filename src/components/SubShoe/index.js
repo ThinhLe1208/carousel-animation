@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import styles from './styles.module.scss';
 
-const SubShoe = ({ subShoeList, delayCarousel }) => {
+const SubShoe = ({ product, delayCarousel }) => {
     console.log('render SubShoe');
     const staggerChildren = 0.2;
     const delaySub = 1.4;
@@ -27,6 +27,7 @@ const SubShoe = ({ subShoeList, delayCarousel }) => {
     const bgItem = {
         show: {
             scaleX: 1,
+            background: product?.background,
             transition: {
                 duration: 0.4
             }
@@ -46,7 +47,7 @@ const SubShoe = ({ subShoeList, delayCarousel }) => {
 
                     <motion.img
                         className={styles.image}
-                        src={subShoeList[0]?.image}
+                        src={product?.subShoeList[0]?.image}
                         alt='img'
                         initial={{
                             opacity: 0,
@@ -75,7 +76,7 @@ const SubShoe = ({ subShoeList, delayCarousel }) => {
                 <div className={styles.imgContainer}>
                     <motion.img
                         className={styles.image}
-                        src={subShoeList[1]?.image}
+                        src={product?.subShoeList[1]?.image}
                         alt='img'
                         initial={{
                             opacity: 0,
@@ -103,7 +104,7 @@ const SubShoe = ({ subShoeList, delayCarousel }) => {
                 <div className={styles.imgContainer}>
                     <motion.img
                         className={styles.image}
-                        src={subShoeList[2]?.image}
+                        src={product?.subShoeList[2]?.image}
                         alt='img'
                         initial={{
                             opacity: 0,

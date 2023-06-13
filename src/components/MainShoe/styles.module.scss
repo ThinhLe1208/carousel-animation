@@ -10,8 +10,8 @@
   z-index: 20;
 
   .mainImg {
-    width: 70%;
-    margin: 0 auto;
+    width: 76%;
+    margin-right: auto;
     filter: drop-shadow(-38px -12px 40px green);
     transform-origin: bottom left;
   }
@@ -19,7 +19,7 @@
   .shadow {
     position: absolute;
     bottom: 6%;
-    left: 50%;
+    left: 40%;
     display: block;
     width: 40%;
     height: 20px;
@@ -36,17 +36,17 @@
   }
 
   .shootingStar1 {
-    top: 22%;
-    right: -22%;
+    top: 28%;
+    right: -14%;
   }
 
   .shootingStar2 {
-    top: 60%;
-    right: 4%;
+    top: 68%;
+    right: 24%;
   }
 
   .shootingStar3 {
-    top: 50%;
+    top: 44%;
     right: -8%;
   }
 

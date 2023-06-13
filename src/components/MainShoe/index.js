@@ -117,9 +117,7 @@ const MainShoe = ({ product, delayCarousel }) => {
                 >
                     <ShootingStar
                         delay={3}
-                        boxShadow='var(--shootingStarShadow1)'
-                        backgroundDot='var(--shootingStarBgDot1)'
-                        backgroundLine='var(--shootingStarBgLine1)'
+                        product={product}
                     />
                 </motion.div>
                 <motion.div
@@ -127,9 +125,7 @@ const MainShoe = ({ product, delayCarousel }) => {
                 >
                     <ShootingStar
                         delay={2.8}
-                        boxShadow='var(--shootingStarShadow2)'
-                        backgroundDot='var(--shootingStarBgDot2)'
-                        backgroundLine='var(--shootingStarBgLine2)'
+                        product={product}
                     />
                 </motion.div>
                 <motion.div
@@ -137,14 +133,12 @@ const MainShoe = ({ product, delayCarousel }) => {
                 >
                     <ShootingStar
                         delay={2.4}
-                        boxShadow='var(--shootingStarShadow1)'
-                        backgroundDot='var(--shootingStarBgDot1)'
-                        backgroundLine='var(--shootingStarBgLine1)'
+                        product={product}
                     />
                 </motion.div>
 
                 <motion.div className={styles.subShoe} >
-                    <SubShoe subShoeList={product?.subShoeList} delayCarousel={delayCarousel} />
+                    <SubShoe product={product} delayCarousel={delayCarousel} />
                 </motion.div>
 
             </motion.div>
