@@ -11,34 +11,34 @@ const productList = [
     {
         id: 0,
         color: '#56ab2f',
-        image: require('../../assets/images/main_green.png'),
-        navImage: require('../../assets/images/nav_green.png'),
+        image: require('../../assets/images/main_green.webp'),
+        navImage: require('../../assets/images/nav_green.webp'),
         subShoeList: [
-            { id: 0, image: require('../../assets/images/sub_blue_1.png') },
-            { id: 1, image: require('../../assets/images/sub_blue_2.png') },
-            { id: 2, image: require('../../assets/images/sub_blue_3.png') },
+            { id: 0, image: require('../../assets/images/sub_green_1.webp') },
+            { id: 1, image: require('../../assets/images/sub_green_2.webp') },
+            { id: 2, image: require('../../assets/images/sub_green_3.webp') },
         ]
     },
     {
         id: 1,
         color: '#CB356B',
-        image: require('../../assets/images/main_pink.png'),
-        navImage: require('../../assets/images/nav_pink.png'),
+        image: require('../../assets/images/main_pink.webp'),
+        navImage: require('../../assets/images/nav_pink.webp'),
         subShoeList: [
-            { id: 0, image: require('../../assets/images/sub_blue_1.png') },
-            { id: 1, image: require('../../assets/images/sub_blue_2.png') },
-            { id: 2, image: require('../../assets/images/sub_blue_3.png') },
+            { id: 0, image: require('../../assets/images/sub_pink_1.webp') },
+            { id: 1, image: require('../../assets/images/sub_pink_2.webp') },
+            { id: 2, image: require('../../assets/images/sub_pink_3.webp') },
         ]
     },
     {
         id: 2,
         color: '#021B79',
-        image: require('../../assets/images/main_blue.png'),
-        navImage: require('../../assets/images/nav_blue.png'),
+        image: require('../../assets/images/main_blue.webp'),
+        navImage: require('../../assets/images/nav_blue.webp'),
         subShoeList: [
-            { id: 0, image: require('../../assets/images/sub_blue_1.png') },
-            { id: 1, image: require('../../assets/images/sub_blue_2.png') },
-            { id: 2, image: require('../../assets/images/sub_blue_3.png') },
+            { id: 0, image: require('../../assets/images/sub_blue_1.webp') },
+            { id: 1, image: require('../../assets/images/sub_blue_2.webp') },
+            { id: 2, image: require('../../assets/images/sub_blue_3.webp') },
         ]
     },
 ];

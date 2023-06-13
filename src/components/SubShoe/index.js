@@ -43,6 +43,7 @@ const SubShoe = ({ subShoeList, delayCarousel }) => {
         <motion.div className={styles.wrapper}>
             <motion.div className={styles.images}>
                 <div className={styles.imgContainer}>
+
                     <motion.img
                         className={styles.image}
                         src={subShoeList[0]?.image}
@@ -70,10 +71,11 @@ const SubShoe = ({ subShoeList, delayCarousel }) => {
                         }}
                     ></motion.img>
                 </div>
+
                 <div className={styles.imgContainer}>
                     <motion.img
                         className={styles.image}
-                        src={subShoeList[0]?.image}
+                        src={subShoeList[1]?.image}
                         alt='img'
                         initial={{
                             opacity: 0,
@@ -97,18 +99,19 @@ const SubShoe = ({ subShoeList, delayCarousel }) => {
                         }}
                     ></motion.img>
                 </div>
+
                 <div className={styles.imgContainer}>
                     <motion.img
                         className={styles.image}
-                        src={subShoeList[0]?.image}
+                        src={subShoeList[2]?.image}
                         alt='img'
                         initial={{
                             opacity: 0,
-                            x: '-20%'
+                            x: '-40%'
                         }}
                         animate={{
                             opacity: 1,
-                            x: '-70%'
+                            x: '-90%'
                         }}
                         transition={{
                             delay: delayCarousel + staggerChildren * 2 + delaySub,
@@ -116,7 +119,7 @@ const SubShoe = ({ subShoeList, delayCarousel }) => {
                         }}
                         exit={{
                             opacity: 0,
-                            x: '-20%',
+                            x: '-40%',
                             transition: {
                                 delay: staggerChildren * 2,
                                 duration: exitDur
