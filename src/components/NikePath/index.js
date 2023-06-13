@@ -2,9 +2,24 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import styles from './styles.module.scss';
+import { useEffect } from 'react';
+import { useRef } from 'react';
 
 const NikePath = ({ delayCarousel }) => {
-    console.log('render NikePath');
+    const imgRef = useRef();
+
+    // reset .gif file
+    useEffect(() => {
+        const imgEle = imgRef.current;
+        if (imgEle) {
+            imgEle.setAttribute('src', require('../../assets/images/ink.webp'));
+        }
+        return () => {
+            if (imgEle) {
+                imgEle.setAttribute('src', '');
+            }
+        };
+    }, []);
 
     return (
         <motion.div
@@ -14,8 +29,9 @@ const NikePath = ({ delayCarousel }) => {
             transition={{ type: 'spring', duration: 2, delay: delayCarousel }}
         >
 
-            {/* <motion.img
+            <motion.img
                 className={styles.video}
+                ref={imgRef}
                 src={require('../../assets/images/ink.webp')}
                 alt="blue_ink_gif"
                 initial={{ opacity: 0 }}
@@ -24,7 +40,7 @@ const NikePath = ({ delayCarousel }) => {
                     delay: delayCarousel + 0.2,
                     duration: 0
                 }}
-            /> */}
+            />
 
             <motion.div
                 className={styles.overlay}

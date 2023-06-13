@@ -3,7 +3,6 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 const Header = () => {
-    console.log('render Header');
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>

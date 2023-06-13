@@ -65,13 +65,13 @@ const productList = [
 ];
 
 const Carousel = () => {
-    console.log('render Carousel');
     const [updatedList, setUpdatedList] = useState([
         productList[productList.length - 1],
         ...productList,
         productList[0]
     ]);
     const [currentProduct, setCurrentProduct] = useState(productList[1]);
+    const [showBackground, setShowBackground] = useState(true);
     const delayCarousel = 0.8;
 
     const handleSetProduct = useCallback((id) => {
@@ -100,38 +100,55 @@ const Carousel = () => {
     }, []);
 
     return (
-        <div className={styles.wrapper}>
-            {/* background */}
-            <motion.p
-                className={styles.backgroundNike}
-                initial={{ left: '-100%' }}
-                animate={{ left: '50%' }}
-                transition={{ type: 'spring', ease: 'easeIn', duration: 2, delay: delayCarousel + 0.6 }}
-            >
-                NIKE
-            </motion.p>
-            <div className={styles.overlayBackground}></div>
+        <motion.div
+            className={styles.wrapper}
+            onViewportEnter={() => {
+                setShowBackground(true);
+            }}
+            onViewportLeave={() => {
+                setShowBackground(false);
+            }}
+        >
+            <AnimatePresence>
+                {showBackground && (
+                    <motion.div className={styles.content}>
+                        {/* background */}
+                        <motion.p
+                            className={styles.backgroundNike}
+                            initial={{ left: '-100%' }}
+                            animate={{ left: '50%' }}
+                            transition={{ type: 'spring', ease: 'easeIn', duration: 2, delay: delayCarousel + 0.6 }}
+                        >
+                            NIKE
+                        </motion.p>
 
-            <NikePath delayCarousel={delayCarousel} />
+                        <motion.div
+                            className={styles.overlayBackground}
+                        ></motion.div>
 
-            {/* Slider */}
+                        <NikePath delayCarousel={delayCarousel} />
 
-            <div className={styles.slider}>
-                <div className={styles.infoContainer}>
-                    <Info product={currentProduct} delayCarousel={delayCarousel} />
-                </div>
+                        {/* Slider */}
 
-                <div className={styles.mainShoeContainer}>
-                    <MainShoe product={currentProduct} delayCarousel={delayCarousel} />
-                </div>
+                        <div className={styles.slider}>
+                            <div className={styles.infoContainer}>
+                                <Info product={currentProduct} delayCarousel={delayCarousel} />
+                            </div>
 
-                <div className={styles.navContainer}>
-                    <AnimatePresence>
-                        <Navigation key={currentProduct?.id} handleSetProduct={handleSetProduct} updatedList={updatedList} />
-                    </AnimatePresence>
-                </div>
-            </div>
-        </div >
+                            <div className={styles.mainShoeContainer}>
+                                <MainShoe product={currentProduct} delayCarousel={delayCarousel} />
+                            </div>
+
+                            <div className={styles.navContainer}>
+                                <AnimatePresence>
+                                    <Navigation key={currentProduct?.id} handleSetProduct={handleSetProduct} updatedList={updatedList} />
+                                </AnimatePresence>
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.div >
     );
 };
 
