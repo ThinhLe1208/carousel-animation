@@ -1,0 +1,22 @@
+.wrapper {
+  &,
+  .homeContent,
+  .cameraScroll {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .homeContent {
+    position: relative;
+    background-color: rgba(255, 0, 0, 0.1);
+    z-index: 100;
+  }
+
+  .cameraScroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+}
